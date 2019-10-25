@@ -15,11 +15,13 @@ const burger = (props) => {
     }
 
   return(
+      <div className='wraper'>
         <div className ='Burger'>
             <BurgerIngredient type='bread-top'/>
                 {transformedIngredients}
             <BurgerIngredient type='bread-bottom'/>
         </div>
+      </div>
   );  
 };
 
