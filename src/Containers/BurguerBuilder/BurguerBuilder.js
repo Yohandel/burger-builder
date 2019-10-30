@@ -50,7 +50,6 @@ class BurguerBuilder extends Component {
     };
     updatedIngredients[type] = updatedCount;
     const priceAddition = INGREDIENTS_PRICE[type];
-    {console.log(priceAddition)}
     const oldPrice = this.state.totalPrice;
     const newPrice = oldPrice + priceAddition;
     this.setState({ totalPrice: newPrice, ingredients: updatedIngredients });
@@ -80,6 +79,10 @@ class BurguerBuilder extends Component {
       this.setState({purchasing: true})
     }
 
+    purchaseCancelHandler = () =>{
+      this.setState({purchasing: false})
+    }
+
   render() {
     const disabledInfo = {
       ...this.state.ingredients
@@ -93,6 +96,7 @@ class BurguerBuilder extends Component {
       <Auxiliar>
         <Modal
         show={this.state.purchasing}
+        modalClosed={this.purchaseCancelHandler}
         >
           <OrderSummary
            ingredients={this.state.ingredients}
