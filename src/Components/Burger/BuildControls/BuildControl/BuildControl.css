@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 5px 0;
+    margin: 1px 0;
 }
 
 .BuildControl button {
@@ -53,4 +53,11 @@
 .BuildControl .More:hover,.BuildControl .More:active {
     background-color: #99703F;
     color: white;
+}
+
+@media(max-width: 499px){
+
+    .BuildControl{
+        margin: 5px 0;
+    }
 }
